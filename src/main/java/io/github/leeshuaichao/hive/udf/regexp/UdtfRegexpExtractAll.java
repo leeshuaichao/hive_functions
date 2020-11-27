@@ -1,6 +1,6 @@
-package com.moxi.hive.udf.regexp;
+package io.github.leeshuaichao.hive.udf.regexp;
 
-import com.moxi.hive.udf.utils.RegexpUtils;
+import io.github.leeshuaichao.hive.udf.utils.RegexpUtils;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentLengthException;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentTypeException;

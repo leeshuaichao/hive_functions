@@ -1,4 +1,4 @@
-package com.moxi.hive.udf.utils;
+package io.github.leeshuaichao.hive.udf.utils;
 
 import java.util.ArrayList;
 import java.util.List;
