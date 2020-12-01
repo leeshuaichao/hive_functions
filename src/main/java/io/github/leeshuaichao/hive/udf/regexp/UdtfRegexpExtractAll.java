@@ -19,6 +19,13 @@ import org.apache.hadoop.io.IntWritable;
  * 2020/11/23 下午2:33
  **/
 public class UdtfRegexpExtractAll extends GenericUDF {
+
+    /**
+     * 参数校验
+     * @param objectInspectors  params
+     * @return                  ObjectInspector
+     * @throws UDFArgumentException UDFArgumentException
+     */
     @Override
     public ObjectInspector initialize(ObjectInspector[] objectInspectors) throws UDFArgumentException {
         // Check if two arguments were passed
@@ -52,11 +59,17 @@ public class UdtfRegexpExtractAll extends GenericUDF {
         return ObjectInspectorFactory.getStandardListObjectInspector(expect);
     }
 
+    /**
+     * 逻辑实现
+     * @param deferredObjects params
+     * @return                array
+     * @throws HiveException  HiveException
+     */
     @Override
     public Object evaluate(DeferredObject[] deferredObjects) throws HiveException {
         String source = deferredObjects[0].get().toString();
         String pattern = deferredObjects[1].get().toString();
-        Integer groupIndex = 0;
+        int groupIndex = 0;
         if (deferredObjects.length == 3) {
             groupIndex = ((IntWritable) deferredObjects[2].get()).get();
         }
@@ -68,6 +81,11 @@ public class UdtfRegexpExtractAll extends GenericUDF {
         return RegexpUtils.findAll(pattern, source, groupIndex);
     }
 
+    /**
+     * 获取展示字符串
+     * @param strings  params
+     * @return         name
+     */
     @Override
     public String getDisplayString(String[] strings) {
         assert (strings.length == 2 || strings.length == 3);

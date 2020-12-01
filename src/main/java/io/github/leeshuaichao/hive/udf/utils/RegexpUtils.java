@@ -16,7 +16,7 @@ public class RegexpUtils {
      * @param regex     正则表达式
      * @param content   被识别字符串
      * @param group     获取第几个括号的内容,0为整个正则
-     * @return
+     * @return          list string
      */
     public static List<String> findAll(String regex, CharSequence content, int group) {
         List<String> collection = new ArrayList<>();

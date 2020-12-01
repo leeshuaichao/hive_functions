@@ -11,9 +11,36 @@
 
     <name>HiveFunctions</name>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>actable</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>lishuaichao</name>
+            <email>lishuaichao@foxmail.com</email>
+            <organization>lishuaichao</organization>
+            <url>https://leeshuaichao.github.io</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:leeshuaichao/hive_functions.git</url>
+        <connection>scm:git:git@github.com:leeshuaichao/hive_functions.git</connection>
+        <developerConnection>scm:git:git@github.com:leeshuaichao/hive_functions.git</developerConnection>
+    </scm>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.hive</groupId>
@@ -33,6 +60,11 @@
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
             </plugin>
         </plugins>
     </build>
